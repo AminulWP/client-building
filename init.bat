@@ -86,14 +86,14 @@ if %ERRORLEVEL% neq 0 goto onError
 
 
 Rem ******************************************************************************************
-rem 			"nextcloud/desktop"
+rem 			"usgtexty/desktop"
 Rem ******************************************************************************************
 
-echo "* git clone nextcloud/desktop."
-start "git clone nextcloud/desktop" /D "%PROJECT_PATH%/" /B /wait git clone https://github.com/nextcloud/desktop.git
+echo "* git clone usgtexty/desktop."
+start "git clone usgtexty/desktop" /D "%PROJECT_PATH%/" /B /wait git clone https://github.com/usgtexty/desktop.git
 if %ERRORLEVEL% neq 0 goto onError
 
-echo "* Create nextcloud/desktop build directory (recursive)."
+echo "* Create usgtexty/desktop build directory (recursive)."
 start "mkdir desktop/build" /D "%PROJECT_PATH%/" /B /wait "%WIN_GIT_PATH%\usr\bin\mkdir.exe" -p "%PROJECT_PATH%/desktop/build"
 if %ERRORLEVEL% neq 0 goto onError
 

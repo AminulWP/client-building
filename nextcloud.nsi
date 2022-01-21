@@ -1,17 +1,17 @@
-;Nextcloud installer script.
+;bitnext installer script.
 
 Unicode true
 
-!define APPLICATION_SHORTNAME "nextcloud"
-!define APPLICATION_NAME "Nextcloud"
+!define APPLICATION_SHORTNAME "bitnext"
+!define APPLICATION_NAME "bitnext"
 !define APPLICATION_VENDOR "$%APPLICATION_VENDOR%"
-!define APPLICATION_EXECUTABLE "nextcloud.exe"
-!define APPLICATION_CMD_EXECUTABLE "nextcloudcmd.exe"
-!define APPLICATION_CONFIG_FILE "nextcloud.cfg"
-!define APPLICATION_DOMAIN "nextcloud.com"
+!define APPLICATION_EXECUTABLE "bitnext.exe"
+!define APPLICATION_CMD_EXECUTABLE "bitnextcmd.exe"
+!define APPLICATION_CONFIG_FILE "bitnext.cfg"
+!define APPLICATION_DOMAIN "bitnext.com"
 !define APPLICATION_LICENSE ""
 !define WIN_SETUP_BITMAP_PATH "$%PROJECT_PATH%\desktop\admin\win\nsi"
-!define CRASHREPORTER_EXECUTABLE "nextcloud_crash_reporter"
+!define CRASHREPORTER_EXECUTABLE "bitnext_crash_reporter"
 
 ; Options, see: defaults.inc.bat
 !define INSTALLER_OUTPUT_PATH "$%INSTALLER_OUTPUT_PATH%"
@@ -79,10 +79,10 @@ Var NoAutomaticUpdates
 ;-----------------------------------------------------------------------------
 
 !define INSTALLER_FILENAME "${APPLICATION_SHORTNAME}-${VERSION}-${MIRALL_VERSION_SUFFIX}-${BUILD_TIME_FILENAME}-${BUILD_TYPE}.exe"
-Name "Nextcloud"
+Name "bitnext"
 BrandingText "${APPLICATION_NAME} ${VERSION} - ${BUILD_TIME}"
 ;IS_INNER_SIGN_UNINSTALLER;OutFile "${PROJECT_PATH}\client-building\daily\${INSTALLER_FILENAME}"
-InstallDir "$PROGRAMFILES64\Nextcloud"    ; use the correct path for Win64 (on Win32 this is identical to $PROGRAMFILES)
+InstallDir "$PROGRAMFILES64\bitnext"    ; use the correct path for Win64 (on Win32 this is identical to $PROGRAMFILES)
 InstallDirRegKey HKCU "Software\${APPLICATION_VENDOR}\${APPLICATION_NAME}" ""
 InstType Standard
 InstType Full

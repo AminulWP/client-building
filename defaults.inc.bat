@@ -20,8 +20,8 @@ Rem            If you intend to modify or specify them outside, keep the scheme!
 Rem ************************************************************************************************************************************************************************************
 Rem Branding options
 
-if "%APP_NAME%" == ""                       set APP_NAME=Nextcloud
-if "%APP_NAME_SANITIZED%" == ""             set APP_NAME_SANITIZED=Nextcloud
+if "%APP_NAME%" == ""                       set APP_NAME=bitnext
+if "%APP_NAME_SANITIZED%" == ""             set APP_NAME_SANITIZED=bitnext
 
 if "%USE_BRANDING%" == ""                   set USE_BRANDING=0
 
@@ -31,16 +31,16 @@ Rem Build environment
 rem Comma separated list of build targets (default: Win64, Win32)
 if "%BUILD_TARGETS%" == ""                  set BUILD_TARGETS=Win64,Win32
 
-if "%PROJECT_PATH%" == ""                   set PROJECT_PATH=c:/Nextcloud/client-building
+if "%PROJECT_PATH%" == ""                   set PROJECT_PATH=D:/nextcloud/client-building
 
-if "%QT_PATH%" == ""                        set QT_PATH=d:/Qt/5.15.2
+if "%QT_PATH%" == ""                        set QT_PATH=C:/Qt/5.15.2
 if "%QT_VS_VERSION%" == ""                  set QT_VS_VERSION=2019
 
-                                            set PATH=c:/Nextcloud/tools/cmake/bin;c:/Nextcloud/tools;C:/Program Files (x86)/NSIS;%PATH%
+                                            set PATH=D:/nextcloud/tools/cmake/bin;D:/nextcloud/tools;C:/Program Files (x86)/NSIS;%PATH%
 
-if "%OPENSSL_PATH%" == ""                   set OPENSSL_PATH=c:/OpenSSL
+if "%OPENSSL_PATH%" == ""                   set OPENSSL_PATH=D:/nextcloud/OpenSSL
 
-if "%Png2Ico_EXECUTABLE%" == ""             set Png2Ico_EXECUTABLE=c:/Nextcloud/tools/png2ico.exe
+if "%Png2Ico_EXECUTABLE%" == ""             set Png2Ico_EXECUTABLE=D:/nextcloud/tools/png2ico.exe
 
 if "%VS_VERSION%" == ""                     set VS_VERSION=2019
 
@@ -82,7 +82,7 @@ if "%TAG_ZLIB%" == ""                       set TAG_ZLIB=master
 
 Rem Desktop Client (master for daily build or e.g.: stable-2.5.3)
 Rem You may query the available tags with "git tag" within ./desktop
-if "%TAG_DESKTOP%" == ""                    set TAG_DESKTOP=master
+if "%TAG_DESKTOP%" == ""                    set TAG_DESKTOP=bitnext
 
 Rem ************************************************************************************************************************************************************************************
 
@@ -118,14 +118,14 @@ if "%INSTALLER_OUTPUT_PATH%" == ""          set INSTALLER_OUTPUT_PATH=%PROJECT_P
 
 Rem ************************************************************************************************************************************************************************************
 Rem Code Signing Options: 1 = enable (default), 0 = disable
-if "%USE_CODE_SIGNING%" == ""               set USE_CODE_SIGNING=1
+if "%USE_CODE_SIGNING%" == ""               set USE_CODE_SIGNING=0
 
 Rem Vendor Name: Used for signing, also used by the installer
-if "%APPLICATION_VENDOR%" == ""             set APPLICATION_VENDOR=Nextcloud GmbH
+if "%APPLICATION_VENDOR%" == ""             set APPLICATION_VENDOR=bitnext
 
 Rem PFX Key and Password - it may be a good idea to set the password outside (environment variables)
 if "%P12_KEY%" == ""                        set P12_KEY=%PROJECT_PATH%\key\%APPLICATION_VENDOR%.p12
-if "%P12_KEY_PASSWORD%" == ""               set P12_KEY_PASSWORD=
+if "%P12_KEY_PASSWORD%" == ""               set P12_KEY_PASSWORD=12345678
 
 if "%SIGN_FILE_DIGEST_ALG%" == ""           set SIGN_FILE_DIGEST_ALG=sha256
 if "%SIGN_TIMESTAMP_URL%" == ""             set SIGN_TIMESTAMP_URL=http://timestamp.sectigo.com
@@ -133,7 +133,7 @@ if "%SIGN_TIMESTAMP_DIGEST_ALG%" == ""      set SIGN_TIMESTAMP_DIGEST_ALG=sha256
 
 Rem ************************************************************************************************************************************************************************************
 Rem Upload build: 1 = enable (default), 0 = disable
-if "%UPLOAD_BUILD%" == ""                   set UPLOAD_BUILD=1
+if "%UPLOAD_BUILD%" == ""                   set UPLOAD_BUILD=0
 
 Rem Delete build after successful upload: 1 = delete, 0 = keep (default)
 if "%UPLOAD_DELETE%" == ""                  set UPLOAD_DELETE=0
